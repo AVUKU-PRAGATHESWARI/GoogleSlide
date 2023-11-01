@@ -44,16 +44,29 @@ body {
   margin-bottom: 5px;
 }
 
+/* Input Field Styles */
 .card input[type='text'],
+.card input[type='number'],
+.card input[type='email'],
 .card select {
   width: 100%;
   padding: 8px;
-  margin: 5px 0;
+  margin: 12px 0;
   border: 1px solid #555;
   border-radius: 3px;
   background-color: #333;
   color: #fff;
 }
+
+/* Align radio buttons and checkboxes */
+.card input[type='checkbox'],
+.card input[type='radio'] {
+  display: inline;
+  margin-top: -45px;
+  margin-left: 55px; /* Adjust the spacing between the input and label */
+  vertical-align: middle; /* Align with the label vertically */
+}
+
 
 .card select {
   color: #fff;
