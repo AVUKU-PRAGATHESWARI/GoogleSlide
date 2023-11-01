@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './AdminDashboard.css'; // Import the CSS file
-import GoogleSlide from '../Google-Slide/GoogleSlide';
+import GoogleSlide from '../Google-Slide/GoogleSlideUI';
 
 const Dashboard = () => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import GoogleSlideUI from '../pages/Google-Slide/GoogleSlide';
+import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
 
 const GoogleSlideLogic = () => {
   const [fields, setFields] = useState([]);

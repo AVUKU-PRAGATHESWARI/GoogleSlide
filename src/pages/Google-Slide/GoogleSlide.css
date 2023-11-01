@@ -57,4 +57,94 @@ body {
   .stopButton:hover {
     background-color: #333;
   }
-  
+  /* GoogleSlide.css */
+/* Assuming you have media queries for responsiveness */
+
+/* Overall background and styling */
+body {
+  background-color: #121212; /* Dark black */
+  color: #fff; /* White text */
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Buttons */
+.addButton,
+.stopButton,
+.addFieldButton {
+  background-color: #ff4d4d; /* Dark red */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.stopButton {
+  background-color: #d9534f; /* Slightly lighter red */
+}
+
+/* Card */
+.card {
+  background-color: #1f1f1f; /* Darker shade of black */
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.card label {
+  color: #ff8080; /* Light red */
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card input[type='text'],
+.card select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+}
+
+.card select {
+  color: #fff;
+}
+
+/* Fields */
+div[key] {
+  margin: 10px 0;
+}
+
+div[key] label {
+  color: #ff8080; /* Light red */
+  margin-bottom: 5px;
+  display: block;
+}
+
+div[key] input {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #555;
+  border-radius: 3px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+}
