@@ -62,8 +62,8 @@ body {
 .card input[type='checkbox'],
 .card input[type='radio'] {
   display: inline;
-  margin-top: -45px;
-  margin-left: 55px; /* Adjust the spacing between the input and label */
+  margin-top: -49px;
+  margin-left: 155px; /* Adjust the spacing between the input and label */
   vertical-align: middle; /* Align with the label vertically */
 }
 
