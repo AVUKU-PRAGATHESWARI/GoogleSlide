@@ -25,7 +25,10 @@ const GoogleSlideUI = ({
         <div className="card">
           <label htmlFor="fieldName">Field Name:</label>
           <input type="text" id="fieldName" value={inputName} onChange={handleNameChange} />
-          <select value={inputType} onChange={handleTypeChange}>
+          <br/>
+          <br/>
+          <label htmlFor='fieldtype'>Field Type:</label>
+            <select value={inputType} onChange={handleTypeChange}>
             <option value="text">Text</option>
             <option value="number">Number</option>
             <option value="email">Email</option>
@@ -37,15 +40,18 @@ const GoogleSlideUI = ({
           </button>
         </div>
       )}
-
-      {fields &&
-        fields.length > 0 &&
-        fields.map((field, index) => (
-          <div key={index}>
-            <label htmlFor={`field-${index}`}>{field.name}</label>
-            <input type={field.type} id={`field-${index}`} name={`field-${index}`} />
-          </div>
-        ))}
+      <div className='card'>
+        <h1 className='Entered-Detailes'>Entered Details:</h1>
+        {fields &&
+          fields.length > 0 &&
+          fields.map((field, index) => (
+            <div key={index}>
+              <label htmlFor={`field-${index}`}>{field.name}</label>
+              <input type={field.type} id={`field-${index}`} name={`field-${index}`} />
+            </div>
+          ))}
+          <br/>
+      </div>
     </div>
   );
 };
