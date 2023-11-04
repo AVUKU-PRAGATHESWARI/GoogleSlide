@@ -1,48 +1,25 @@
 body {
-  background-color: black; /* Setting the overall page background to black */
-  color: white; /* Making text color white for better visibility on a dark background */
-}
-
-.dashboard-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  margin: 20px;
+  background-color: var(--background-black);
+  color: var(--text-white);
 }
 
 .animated-card {
-  padding: 20px;
-  border-radius: 8px;
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
-  background-color: #222; /* Light black shade for the card */
-}
-
-.animated-card:hover {
-  transform: scale(1.05);
+  background-color: var(--light-black);
+  box-shadow: var(--card-shadow);
 }
 
 .animated-card h2 {
-  color: white; /* Adjusting text color for better visibility on the card */
+  color: var(--text-white);
 }
 
 .animated-card p {
-  color: #ccc; /* Adjusting text color for better visibility on the card */
+  color: var(--text-light-gray);
 }
 
 .animated-card-button {
-  background-color: red;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 10px;
+  background-color: var(--button-orange);
 }
 
 .animated-card-button:hover {
-  background-color: darkred;
+  background-color: var(--button-hover-orange);
 }

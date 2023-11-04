@@ -1,7 +1,8 @@
 
+
 body {
-  background-color: #121212; /* Dark black */
-  color: #fff; /* White text */
+  background-color: var(--dark-black);
+  color: var(--white);
   font-family: Arial, sans-serif;
   padding: 20px;
   margin: 0;
@@ -17,8 +18,8 @@ body {
 .addButton,
 .stopButton,
 .addFieldButton {
-  background-color: #ff4d4d; /* Dark red */
-  color: #fff;
+  background-color: var(--orange);
+  color: var(--white);
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -27,19 +28,19 @@ body {
 }
 
 .stopButton {
-  background-color: #d9534f; /* Slightly lighter red */
+  background-color: var(--light-orange);
 }
 
 /* Card */
 .card {
-  background-color: #1f1f1f; /* Darker shade of black */
+  background-color: var(--dark-black-shade);
   padding: 20px;
   margin: 10px 0;
   border-radius: 5px;
 }
 
 .card label {
-  color: #ff8080; /* Light red */
+  color: var(--light-orange-text);
   display: block;
   margin-bottom: 5px;
 }
@@ -48,14 +49,15 @@ body {
 .card input[type='text'],
 .card input[type='number'],
 .card input[type='email'],
-.card select {
+.card select,
+div[key] input {
   width: 100%;
   padding: 8px;
   margin: 12px 0;
   border: 1px solid #555;
   border-radius: 3px;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--dark-gray);
+  color: var(--white);
 }
 
 /* Align radio buttons and checkboxes */
@@ -63,13 +65,12 @@ body {
 .card input[type='radio'] {
   display: inline;
   margin-top: -49px;
-  margin-left: 155px; /* Adjust the spacing between the input and label */
-  vertical-align: middle; /* Align with the label vertically */
+  margin-left: 155px;
+  vertical-align: middle;
 }
 
-
 .card select {
-  color: #fff;
+  color: var(--white);
 }
 
 /* Fields */
@@ -78,28 +79,18 @@ div[key] {
 }
 
 div[key] label {
-  color: #ff8080; /* Light red */
+  color: var(--light-orange-text);
   margin-bottom: 5px;
   display: block;
 }
 
-.Entered-Detailes{
+.Entered-Detailes {
   font-size: 20px;
-  color: #ff4d4d;
+  color: var(--dark-orange);
 }
 
-div[key] input {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #555;
-  border-radius: 3px;
-  background-color: #333;
-  color: #fff;
-}
-
-.for-data-display{
-  background-color: #1f1f1f;
+.for-data-display {
+  background-color: var(--dark-black-shade);
   border-radius: 10px;
   padding: 10px;
 }
@@ -110,4 +101,3 @@ div[key] input {
     max-width: 100%;
   }
 }
-
