@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { supabase } from '../config/apiConfig';
 import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
 
 const GoogleSlideLogic = () => {
@@ -9,10 +10,6 @@ const GoogleSlideLogic = () => {
 
   const addField = () => {
     setAddingField(true);
-  };
-
-  const stopAddingField = () => {
-    setAddingField(false);
   };
 
   const handleNameChange = (event) => {
@@ -31,6 +28,35 @@ const GoogleSlideLogic = () => {
     }
   };
 
+  const createTable = async () => {
+    console.log("huyghtfgf")
+    try {
+      if (fields.length === 0) {
+        console.error('Cannot create a table without fields.');
+        return;
+      }
+
+      const columnDefinitions = fields
+        .map((field) => `${field.name} ${field.type}`)
+        .join(', ');
+
+      const tableName = 'your_table_name'; // Change 'your_table_name' to your desired table name
+
+      const createTableQuery = `CREATE TABLE ${tableName} (${columnDefinitions});`;
+
+      const { data, error } = await supabase.from('your_table_name').execute(createTableQuery);
+
+      if (error) {
+        console.error('Error creating table:', error);
+      } else {
+        console.log('Table created successfully:', data);
+        // Additional logic for successful table creation
+      }
+    } catch (error) {
+      console.error('Error creating table:', error);
+    }
+  };
+
   return (
     <GoogleSlideUI
       fields={fields}
@@ -41,7 +67,7 @@ const GoogleSlideLogic = () => {
       handleTypeChange={handleTypeChange}
       addFieldToForm={addFieldToForm}
       addField={addField}
-      stopAddingField={stopAddingField}
+      createTable={createTable} // Pass the createTable function to your UI component
     />
   );
 };

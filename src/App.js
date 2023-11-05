@@ -1,14 +1,18 @@
-// App.js
-
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';// Assuming this is the component for creating Google Slides
 import Dashboard from './pages/Admin-DashBoard/AdminDashboard';
-import DynamicForm from './pages/Google-Slide/GoogleSlideUI';
-import GoogleSlideUI from './pages/Google-Slide/GoogleSlideUI';
 import GoogleSlideLogic from './containers/GoogleFormLogic';
+import { Router } from 'react-router-dom/cjs/react-router-dom.min';
+
 const App = () => {
   return (
-    <GoogleSlideLogic/>
+    <Router>
+      <Switch>
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/google-creation" component={GoogleSlideLogic} />
+        {/* Add more routes as needed */}
+      </Switch>
+    </Router>
   );
 };
 
