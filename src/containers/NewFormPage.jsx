@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams, Routes, Route } from 'react-router-dom';
 import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
 
-// Add an additional component for the new form page
 const NewFormPage = ({ formId }) => {
-  // You can use the formId to fetch data or perform other actions specific to the form
   return (
     <div>
       <h2>Form Page for ID: {formId}</h2>

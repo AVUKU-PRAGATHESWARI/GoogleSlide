@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
 import { v4 as uuidv4 } from 'uuid';
+import { useGoogleSlideContext } from './GoogleSlideContext';
 
 
 const GoogleSlideLogic = () => {
@@ -20,11 +21,15 @@ const GoogleSlideLogic = () => {
 
   const addField = () => {
     setAddingField(true);
+    setFields([...fields, { name: inputName, type: inputType }]);
+    
   };
 
   const stopAddingField = () => {
-    setAddingField(false);
-    const newId = generateUniqueId(); // Implement your unique ID generation logic
+    const newId = generateUniqueId();
+    setFields([...fields, { id: newId, name: inputName, type: inputType }]);
+    setInputName('');
+    setInputType('text');
     navigate(`/form/${newId}`);
   };
 

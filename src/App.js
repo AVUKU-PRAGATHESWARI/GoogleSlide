@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/forms/:id" element={<GoogleSlideLogic />} />
+        <Route path="/" element={<GoogleSlideLogic />} />
       </Routes>
     </Router>
   );
