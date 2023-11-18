@@ -1,10 +1,9 @@
 // GoogleSlideLogic.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
 import { v4 as uuidv4 } from 'uuid';
 import { useGoogleSlideContext } from './GoogleSlideContext';
-
 
 const GoogleSlideLogic = () => {
   const [fields, setFields] = useState([]);
@@ -17,12 +16,9 @@ const GoogleSlideLogic = () => {
   const generateUniqueId = () => {
     return uuidv4();
   };
-  
 
   const addField = () => {
     setAddingField(true);
-    setFields([...fields, { name: inputName, type: inputType }]);
-    
   };
 
   const stopAddingField = () => {
@@ -46,8 +42,15 @@ const GoogleSlideLogic = () => {
       setFields([...fields, { name: inputName, type: inputType }]);
       setInputName('');
       setInputType('text');
+      setAddingField(false); // Reset addingField state after adding a field
     }
   };
+
+  useEffect(() => {
+    // You can perform any additional logic here when fields are updated
+    // For example, update the form in the UI
+    console.log('Form fields updated:', fields);
+  }, [fields]);
 
   return (
     <GoogleSlideUI
