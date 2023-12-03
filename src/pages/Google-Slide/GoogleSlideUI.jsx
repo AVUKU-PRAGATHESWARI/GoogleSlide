@@ -1,17 +1,8 @@
 import React from 'react';
 import './GoogleSlide.css';
 
-const GoogleSlideUI = ({
-  fields,
-  addingField,
-  inputName,
-  inputType,
-  handleNameChange,
-  handleTypeChange,
-  addFieldToForm,
-  addField,
-  stopAddingField
-}) => {
+const GoogleSlideUI = ({  fields,  addingField,  inputName,  inputType,  handleNameChange,  handleTypeChange,  addFieldToForm,  addField,  stopAddingField }) => {
+  
   return (
     <div>
       <button className="addButton" onClick={addField}>

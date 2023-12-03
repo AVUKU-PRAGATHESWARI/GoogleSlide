@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import GoogleSlideUI from '../pages/Google-Slide/GoogleSlideUI';
+import FormComponent from './FormComponent'; // Import the dynamically created form component
 import { v4 as uuidv4 } from 'uuid';
 import { useGoogleSlideContext } from './GoogleSlideContext';
+
 
 const GoogleSlideLogic = () => {
   const [fields, setFields] = useState([]);
@@ -17,17 +19,27 @@ const GoogleSlideLogic = () => {
     return uuidv4();
   };
 
+  const FormComponentWithFields = () => <FormComponent fields={fields} />;
+
+
   const addField = () => {
     setAddingField(true);
   };
 
   const stopAddingField = () => {
     const newId = generateUniqueId();
-    setFields([...fields, { id: newId, name: inputName, type: inputType }]);
+    setFields((prevFields) => [...prevFields, { id: newId, name: inputName, type: inputType }]);
     setInputName('');
     setInputType('text');
+
+    // Dynamically create the form component and update the state
+    const FormComponentWithFields = () => <FormComponent fields={fields} />;
+    FormComponent(<FormComponentWithFields />);
+  
+    // Navigate to the new form
     navigate(`/form/${newId}`);
   };
+  
 
   const handleNameChange = (event) => {
     setInputName(event.target.value);
